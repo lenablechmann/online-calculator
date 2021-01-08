@@ -16,7 +16,8 @@ A JavaScript (+CSS +HTML) calculator app.
 - [ ] figure out the layout with figma + find a decent color palette
 - [ ] create small prototypes for your ideas:
     - a function that takes user string and puts out a modified string (several 0000 get ignored, multiple dots in one number get ignored)
-    - parse a string as though it's a stack with pop and push methods
+    - parse a string as though it's a stack or better yet queue with pop and push methods
+    - write 2 queues one for operands oner for numbers?
     - find a way to deal with very long numbers
 - [ ] structure the HTML
 - [ ] mobile first CSS

@@ -9,8 +9,27 @@
 <p> an html file, where user can enter a string of numbers via buttons 
     and your program displays it</p>
 <p>Check out the console log</p>
+<div class="display">
+    test
+</div>
+<button class="digit" id="0">0</button>
+<button class="digit" id="1">1</button>
+<button class="digit" id="2">2</button>
+<button class="operator" id="+">+</button>
+<button class="clear" id="clear">AC</button>
 <script>
-
+    // here we will save user input which will be entered via buttons
+    let userInput = "";
+    // should be a nodelist, once a button is clicked, id is logged
+    const digitsInput = document.querySelectorAll(".digit");
+    const display = document.querySelector(".display");
+    digitsInput.forEach(btn => {
+        btn.addEventListener("click", function(event) {
+            userInput += this.id;
+            console.log(userInput);
+            display.textContent = userInput;
+        });
+    });
 </script>
 </body>
 

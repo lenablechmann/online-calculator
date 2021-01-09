@@ -20,7 +20,7 @@ A JavaScript (+CSS +HTML) calculator app.
 - potentially add a floating point number input
 
 ## Project Plan
-- [ ] figure out the basic button layout + find a decent color palette
+- [x] figure out the basic button layout ![rough sketch of a layout](calclayout.jpg "Calculator Layout") + find a decent color palette (mains #dddddd and #222831, accents #30475e and #f05454)
 - [ ] create small function prototypes:
     - a function that takes user string and puts out a modified string (several 0000 get ignored)
     - parse a string as though it's a stack with pop and push methods (Reverse Polish Notation style + Shunting Yard Algorithm)

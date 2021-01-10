@@ -40,7 +40,7 @@
         digitsInput.forEach(btn => {
             btn.addEventListener("click", function (event) {
                 const newDigit = this.id;
-                if(checkNumber(userNumber+newDigit)){
+                if (checkNumber(userNumber + newDigit)) {
                     userNumber += newDigit;
                     display.textContent = displayedText.join("") + userNumber;
                 }
@@ -50,7 +50,7 @@
         operatorInput.forEach(btn => {
             btn.addEventListener("click", function (event) {
                 // avoids operator spam
-                if (userNumber !== ""){
+                if (userNumber !== "") {
                     // pushing the newest numbers and operators to the beginning of the stack
                     operatorStack.push(this.id);
                     numberStack.unshift(userNumber);

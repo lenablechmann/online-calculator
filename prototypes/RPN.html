@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title> Reverse Polish Notation</title>
+</head>
+
+<body>
+<p>Testing reverse polish notation logic</p>
+<p>Check out console log</p>
+
+<script>
+    // an object that will do the operations:
+    let operate = {
+        "+": (num1, num2) => num1 + num2,
+        "-": (num1, num2) => num1 - num2,
+        "*": (num1, num2) => num1 * num2,
+        "/": (num1, num2) => num1 / num2,
+    }
+    // create 2 stacks (well actschually, arrays) and reverse polish em
+    let operatorStack = ["+", "-", "-", "+"];
+    let numberStack = ["1", "2", "3", "4", "5"];
+    let result = 0;
+    // console.log(operate["+"](1,8));
+    // unshift adds item at the start, shift removes item from the start and returns it
+    // const firstOperator = operatorStack.shift();
+    // const num1 = parseFloat(numberStack.shift());
+    // const num2 = parseFloat(numberStack.shift());
+    // console.log(`First op is ${firstOperator}, first number ${num1}, second number ${num2}`);
+    // console.log(operate[firstOperator](num1,num2));
+
+    while(numberStack.length >= 2) {
+        let firstOperator = operatorStack.shift();
+        let num1 = parseFloat(numberStack.shift());
+        let num2 = parseFloat(numberStack.shift());
+        result = operate[firstOperator](num1,num2);
+        numberStack.unshift(result);
+        console.log(`The int result is ${result}`);
+    }
+        console.log(`The final result is ${result}`);
+
+
+    
+
+
+
+</script>
+</body>
+
+</html>

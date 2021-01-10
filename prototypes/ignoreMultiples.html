@@ -16,51 +16,67 @@
     <button class="digit" id="0">0</button>
     <button class="digit" id="1">1</button>
     <button class="digit" id="2">2</button>
+    <button class="digit" id="3">3</button>
     <button class="digit" id=".">.</button>
     <button class="operator" id="+">+</button>
     <button class="operator" id="-">-</button>
+    <button class="operator" id="*">*</button>
+    <button class="operator" id="/">/</button>
     <button class="clear" id="clear">AC</button>
-    <script>
-        // saving user input as an array of strings
-        let userInputArray = [];
-        let userNumber = "";
 
+    <script>
+        let displayedText = [];
+        let userNumber = "";
+        // arrays for reverse polish notation (unshift() will have to be used)
+        let numberStack = [];
+        let operatorStack = [];
+
+        // variables for DOM modification
         const digitsInput = document.querySelectorAll(".digit");
         const operatorInput = document.querySelectorAll(".operator");
         const display = document.querySelector(".display");
 
-        // append new user input digit to displayed string if plausible
+        // append new user input digit to displayed string if number is plausible
         digitsInput.forEach(btn => {
             btn.addEventListener("click", function (event) {
                 const newDigit = this.id;
                 if(checkNumber(userNumber+newDigit)){
                     userNumber += newDigit;
-                    display.textContent = userInputArray.join("") + userNumber;
+                    display.textContent = displayedText.join("") + userNumber;
                 }
             });
         });
 
         operatorInput.forEach(btn => {
             btn.addEventListener("click", function (event) {
-                // TODO disable operators if userNumber is empty
-                // storing the last number in the array of numbers, clearing the var for the next
-                userInputArray.push(userNumber);
-                userNumber = "";
-                console.log(userNumber);
+                // avoids operator spam
+                if (userNumber !== ""){
+                    // pushing the newest numbers and operators to the beginning of the stack
+                    operatorStack.push(this.id);
+                    numberStack.unshift(userNumber);
+
+                    // the display goes from left to right chronologically, thats why push()
+                    displayedText.push(userNumber);
+                    displayedText.push(this.id);
+                    userNumber = "";
+                    display.textContent = displayedText.join("");
+                }
             });
         });
         // add a clear button functionality
         document.getElementById("clear").onclick = clearDisplay;
+        console.log(operatorStack);
 
         // various functions
         function clearDisplay() {
-            userInput = "";
-            userNumber = "";
-            display.textContent = userInput;
+            displayedText.splice(0, displayedText.length);
+            userNumber = null;
+            numberStack.splice(0, numberStack.length)
+            operatorStack.splice(0, operatorStack.length)
+            display.textContent = displayedText;
         }
 
         function checkNumber(numString) {
-            console.log(typeof numString);
             // checks for duplicate . and 0 at start using regex
             return (/^[+-]?(([1-9][0-9]*)?[0-9](\.[0-9]*)?|\.[0-9]+)$/.test(numString));
         }

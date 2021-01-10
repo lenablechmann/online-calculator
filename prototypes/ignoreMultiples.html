@@ -2,17 +2,69 @@
 <html lang="en">
 
 <head>
-<title>ignore multiple x</title>
+    <title>ignore multiple x</title>
 </head>
 
 <body>
-<p> a function "ignoreMultiple"
-    that takes user string and puts out a modified string
-    (several 0000 and also several +++ or 1.23. get ignored)</p>
-<p>Check out the console log</p>
-<script>
+    <p> a function "ignoreMultiple"
+        that takes user string and puts out a modified string
+        (several 0000 and also several +++ or 1.23. get ignored)</p>
+    <p>Check out the console log</p>
+    <div class="display">
+        test
+    </div>
+    <button class="digit" id="0">0</button>
+    <button class="digit" id="1">1</button>
+    <button class="digit" id="2">2</button>
+    <button class="digit" id=".">.</button>
+    <button class="operator" id="+">+</button>
+    <button class="operator" id="-">-</button>
+    <button class="clear" id="clear">AC</button>
+    <script>
+        // saving user input as an array of strings
+        let userInputArray = [];
+        let userNumber = "";
 
-</script>
+        const digitsInput = document.querySelectorAll(".digit");
+        const operatorInput = document.querySelectorAll(".operator");
+        const display = document.querySelector(".display");
+
+        // append new user input digit to displayed string if plausible
+        digitsInput.forEach(btn => {
+            btn.addEventListener("click", function (event) {
+                const newDigit = this.id;
+                if(checkNumber(userNumber+newDigit)){
+                    userNumber += newDigit;
+                    display.textContent = userInputArray.join("") + userNumber;
+                }
+            });
+        });
+
+        operatorInput.forEach(btn => {
+            btn.addEventListener("click", function (event) {
+                // TODO disable operators if userNumber is empty
+                // storing the last number in the array of numbers, clearing the var for the next
+                userInputArray.push(userNumber);
+                userNumber = "";
+                console.log(userNumber);
+            });
+        });
+        // add a clear button functionality
+        document.getElementById("clear").onclick = clearDisplay;
+
+        // various functions
+        function clearDisplay() {
+            userInput = "";
+            userNumber = "";
+            display.textContent = userInput;
+        }
+
+        function checkNumber(numString) {
+            console.log(typeof numString);
+            // checks for duplicate . and 0 at start using regex
+            return (/^[+-]?(([1-9][0-9]*)?[0-9](\.[0-9]*)?|\.[0-9]+)$/.test(numString));
+        }
+    </script>
 </body>
 
 </html>

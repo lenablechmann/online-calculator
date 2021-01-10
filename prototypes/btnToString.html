@@ -20,16 +20,25 @@
 <script>
     // here we will save user input which will be entered via buttons
     let userInput = "";
-    // should be a nodelist, once a button is clicked, id is logged
+
     const digitsInput = document.querySelectorAll(".digit");
     const display = document.querySelector(".display");
+
+    // a nodelist of buttons, once a button is clicked, id is logged
     digitsInput.forEach(btn => {
         btn.addEventListener("click", function(event) {
+            // id correspond to the value of button
             userInput += this.id;
-            console.log(userInput);
             display.textContent = userInput;
         });
     });
+    // add a clear button functionality
+    document.getElementById("clear").onclick = clearDisplay;
+    
+    function clearDisplay(){
+        userInput = "";
+        display.textContent = userInput;
+    }
 </script>
 </body>
 

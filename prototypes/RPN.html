@@ -18,8 +18,8 @@
         "/": (num1, num2) => num1 / num2,
     }
     // create 2 stacks (well actschually, arrays) and reverse polish em
-    let operatorStack = ["+", "-", "-", "+"];
-    let numberStack = ["1", "2", "3", "4", "5"];
+    let operatorStack = ["/", "-", "-", "+"];
+    let numberStack = ["1", "0", "3", "4", "5"];
     let result = 0;
     // console.log(operate["+"](1,8));
     // unshift adds item at the start, shift removes item from the start and returns it
@@ -35,14 +35,14 @@
         let num2 = parseFloat(numberStack.shift());
         result = operate[firstOperator](num1,num2);
         numberStack.unshift(result);
-        console.log(`The int result is ${result}`);
     }
+
+    if (result === Infinity || result === -Infinity){
+        console.log("Cheeky Error");
+    }
+    else {
         console.log(`The final result is ${result}`);
-
-
-    
-
-
+    }
 
 </script>
 </body>

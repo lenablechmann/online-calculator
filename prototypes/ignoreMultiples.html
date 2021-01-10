@@ -71,13 +71,17 @@
         function clearDisplay() {
             displayedText = [];
             userNumber = "";
+            // completely clearing out arrays used for calculations
             numberStack.splice(0, numberStack.length)
             operatorStack.splice(0, operatorStack.length)
+            // resetting display as well
             display.textContent = displayedText;
         }
 
         function checkNumber(numString) {
             // checks for duplicate . and 0 at start using regex
+            // source: https://stackoverflow.com/questions/16779871/javascript-function-to-avoid-two-decimal-points-ex-12-1-1-in-html-input-text
+            // I'm no RegEx wizard (yet?)
             return (/^[+-]?(([1-9][0-9]*)?[0-9](\.[0-9]*)?|\.[0-9]+)$/.test(numString));
         }
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title> Dealing with long numbers</title>
+</head>
+
+<body>
+<p>Check out the console log</p>
+<script>
+    const longInt = 352570293750293857239857;
+    const longFloat = 0.347293857239857239857239573209857;
+    const number = 3242379873598325.23495023580235820358;
+    // console.log(longInt.toExponential(5));
+    // console.log(longFloat.toPrecision(2));
+    console.log(number);
+    let shorty = parseFloat(number).toPrecision(2);
+    console.log(shorty);
+    // turns out it automatically uses the scientific notation.
+    if (toString(shorty).length > 10) {
+        shorty = Math.round(shorty).toExponential(2);
+        console.log(shorty);
+
+    }
+
+
+    // what to do with unknown numbers:
+
+</script>
+</body>
+
+</html>

@@ -24,7 +24,7 @@ A JavaScript (+CSS +HTML) calculator app.
 - [ ] create small function prototypes:
     - a function that takes user string and puts out a modified string (several 0000 get ignored)
     - parse a string as though it's a stack with pop and push methods (Reverse Polish Notation style + Shunting Yard Algorithm)
-    - edge case for when there aren't enough operands/operators
+    - edge case for when user enters very long numbers
     - find a way to deal with very long numbers
 - [ ] write out pseudocode 
 - [ ] structure the HTML

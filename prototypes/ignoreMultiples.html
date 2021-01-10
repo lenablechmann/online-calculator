@@ -69,8 +69,8 @@
 
         // various functions
         function clearDisplay() {
-            displayedText.splice(0, displayedText.length);
-            userNumber = null;
+            displayedText = [];
+            userNumber = "";
             numberStack.splice(0, numberStack.length)
             operatorStack.splice(0, operatorStack.length)
             display.textContent = displayedText;
@@ -80,6 +80,7 @@
             // checks for duplicate . and 0 at start using regex
             return (/^[+-]?(([1-9][0-9]*)?[0-9](\.[0-9]*)?|\.[0-9]+)$/.test(numString));
         }
+
     </script>
 </body>
 

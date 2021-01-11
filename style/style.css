@@ -6,6 +6,8 @@
 
 /* *Basic Layout* */
 * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -16,7 +18,8 @@ body {
     flex: wrap;
     align-items: center;
     justify-content: center;
-    font-family: 'Bai Jamjuree', sans-serif;
+    font-family: 'Gruppo', cursive;
+    font-size: 100%;
 }
 
     .calc-body {
@@ -34,23 +37,24 @@ body {
         background-color: rgb(221, 189, 252);
     }
         .title {
-            margin: 1.5em 0.5em 0.5em 0.5em;
+            margin: 1.5em 0.5em 0em 0.7em;
             font-family: 'Do Hyeon', sans-serif;
             font-style: italic;
             font-size: 1.1rem;
         }
         .display {
-            flex-flow: column wrap;
-            margin: 0.5em;
+            margin: 0.9em;
         }
             .user-input {
-               padding: 0.4em;
-               font-size: 0.9rem;
+                min-width: 100%;
+                display: inline-block;
+                padding: 10px 10px 0 10px;
             }
             .result {
-               float: inline-end;
-               padding: 0.4em;
-               font-size: 1.4rem;
+                min-width: 100%;
+                display: inline-block;
+                padding: 5px 10px 10px 10px;
+                align-self: flex-end;
             }
 
         .buttons {
@@ -65,18 +69,18 @@ body {
                                  "zer zer dec equal"
                                 ;
             margin: 0.5em 0.5em 1.5em 0.5em;
-            font-family: 'Bai Jamjuree', sans-serif;
+            font-family: 'Gruppo', cursive;
         }
             /*digit button styling*/
             .digit {
                 margin: 0.2em;
-                padding: 1em;
+                padding: 0.6em 0.9em 0.6em 0.9em;
                 font-family: inherit;
             }
             /*operator and other button styling*/
             .operator, .clear, .equal {
                 margin: 0.2em;
-                padding: 1em;
+                padding: 0.6em 0.9em 0.6em 0.9em;
                 font-family: inherit;
             }
 
@@ -152,16 +156,22 @@ body {
     }
         .user-input {
             color: #2C2938;
+            font-size: 1rem;
         }
         .result {
+            font-size: 1.8rem;
             color: #2C2938;
         }
     /*button colors*/
     .digit {
         color: #2C2938;
         background-color: #F9F7F6;
+        font-size: 1.3rem;
+        font-weight: 700;
     }
     .operator, .clear, .equal {
-        background-color: #ec8d61;
+        background-color: #f08452;
         color: #2C2938;
+        font-size: 1.4rem;
+        font-weight: bold;
     }

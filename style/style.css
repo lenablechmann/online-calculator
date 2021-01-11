@@ -1,0 +1,17 @@
+/* Fonts */
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+
+/*  Contents of this file:
+ *  |Basic Layout|
+ *  |Animations|
+ *  |Media queries|
+ */
+
+/* *Basic Layout* */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bai Jamjuree', sans-serif;
+}

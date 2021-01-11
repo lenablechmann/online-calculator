@@ -21,13 +21,11 @@ A JavaScript (+CSS +HTML) calculator app.
 
 ## Project Plan
 - [x] figure out the basic button layout ![rough sketch of a layout](calclayout.jpg "Calculator Layout") + find a decent color palette (mains #dddddd and #222831, accents #30475e and #f05454)
-- [ ] create small function prototypes:
+- [x] create small function prototypes (see prototype folder):
     - a function that takes user string and puts out a modified string (several 0000 get ignored)
-    - parse a string as though it's a stack with pop and push methods (Reverse Polish Notation style + Shunting Yard Algorithm)
+    - parse user input into a stack with pop and push methods (Reverse Polish Notation style + Shunting Yard Algorithm)
     - edge case for when user enters very long numbers
-    - find a way to deal with very long numbers
-- [ ] write out pseudocode 
 - [ ] structure the HTML
-- [ ] connect the JS to the DOM
+- [ ] put all the JS prototypes together
 - [ ] mobile first CSS, fits the mobile screen, should look like a mobile calculator on desktop as well
 

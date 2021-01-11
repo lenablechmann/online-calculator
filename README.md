@@ -25,7 +25,7 @@ A JavaScript (+CSS +HTML) calculator app.
     - a function that takes user string and puts out a modified string (several 0000 get ignored)
     - parse user input into a stack with pop and push methods (Reverse Polish Notation style + Shunting Yard Algorithm)
     - edge case for when user enters very long numbers
-- [ ] structure the HTML
+- [x] structure the HTML
 - [ ] put all the JS prototypes together
 - [ ] mobile first CSS, fits the mobile screen, should look like a mobile calculator on desktop as well
 

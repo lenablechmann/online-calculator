@@ -1,9 +1,6 @@
-/* Fonts */
-@import url(//fonts.googleapis.com/css?family=Open+Sans);
-
 /*  Contents of this file:
  *  |Basic Layout|
- *  |Animations|
+ *  |Colors|
  *  |Media queries|
  */
 
@@ -23,7 +20,8 @@ body {
 }
 
     .calc-body {
-        max-width: 400px;
+        min-width: 300px;
+        max-width: 450px;
         max-height: 100vh;
         display: grid;
         /*base layout only has rows*/
@@ -35,6 +33,25 @@ body {
         grid-template-rows: 10% 20% 70%;
         background-color: rgb(221, 189, 252);
     }
+        .title {
+            margin: 1.5em 0.5em 0.5em 0.5em;
+            font-family: 'Do Hyeon', sans-serif;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+        .display {
+            flex-flow: column wrap;
+            margin: 0.5em;
+        }
+            .user-input {
+               padding: 0.4em;
+               font-size: 0.9rem;
+            }
+            .result {
+               float: inline-end;
+               padding: 0.4em;
+               font-size: 1.4rem;
+            }
 
         .buttons {
             grid-area: buttons;
@@ -46,9 +63,24 @@ body {
                                  "four five six plus"
                                  "one two three equal"
                                  "zer zer dec equal"
-        ;
+                                ;
+            margin: 0.5em 0.5em 1.5em 0.5em;
+            font-family: 'Bai Jamjuree', sans-serif;
         }
-            /*buttons grid layout*/
+            /*digit button styling*/
+            .digit {
+                margin: 0.2em;
+                padding: 1em;
+                font-family: inherit;
+            }
+            /*operator and other button styling*/
+            .operator, .clear, .equal {
+                margin: 0.2em;
+                padding: 1em;
+                font-family: inherit;
+            }
+
+            /*defining grid area names*/
             .zero {
                 grid-area: zer;
             }
@@ -100,3 +132,36 @@ body {
             .equal {
                 grid-area: equal;
             }
+
+/* *Colors* */
+/*current palette: #F9F7F6 white
+#DB6F56 orange #9382C2 light purple
+#696F86 steelgrey #2C2938 deep purple
+*/
+
+.calc-body {
+    background-color: #F9F7F6;
+    box-shadow: 3px 3px 5px 6px rgb(224, 220, 224);
+}
+
+    .title {
+        color: #696F86;
+    }
+    .display {
+        background-color: #bfbbca;
+    }
+        .user-input {
+            color: #2C2938;
+        }
+        .result {
+            color: #2C2938;
+        }
+    /*button colors*/
+    .digit {
+        color: #2C2938;
+        background-color: #F9F7F6;
+    }
+    .operator, .clear, .equal {
+        background-color: #ec8d61;
+        color: #2C2938;
+    }

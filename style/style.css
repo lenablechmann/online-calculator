@@ -13,5 +13,34 @@
 }
 
 body {
+    /*Centering the calculator on the page*/
+    height: 100vh;
+    display: flex;
+    flex: wrap;
+    align-items: center;
+    justify-content: center;
     font-family: 'Bai Jamjuree', sans-serif;
 }
+
+    .calc-body {
+        max-width: 400px;
+        max-height: 100vh;
+        display: grid;
+        /*base layout only has rows*/
+        grid-template-areas: "title"
+                            "display"
+                            "buttons"
+        ;
+        grid-template-columns: 100%;
+        grid-template-rows: 15% 20% 65%;
+        background-color: rgb(221, 189, 252);
+    }
+
+        .buttons {
+            grid-area: buttons;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+
+
+        }

@@ -32,7 +32,7 @@ body {
                             "buttons"
         ;
         grid-template-columns: 100%;
-        grid-template-rows: 15% 20% 65%;
+        grid-template-rows: 10% 20% 70%;
         background-color: rgb(221, 189, 252);
     }
 
@@ -40,7 +40,63 @@ body {
             grid-area: buttons;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
-
-
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-areas: "clear clear divide mult"
+                                 "seven eight nine minus"
+                                 "four five six plus"
+                                 "one two three equal"
+                                 "zer zer dec equal"
+        ;
         }
+            /*buttons grid layout*/
+            .zero {
+                grid-area: zer;
+            }
+            .one {
+                grid-area: one;
+            }
+            .two {
+                grid-area: two;
+            }
+            .three {
+                grid-area: three;
+            }
+            .four {
+                grid-area: four;
+            }
+            .five {
+                grid-area: five;
+            }
+            .six {
+                grid-area: six;
+            }
+            .seven {
+                grid-area: seven;
+            }
+            .eight {
+                grid-area: eight;
+            }
+            .nine {
+                grid-area: nine;
+            }
+            .dec {
+                grid-area: dec;
+            }
+            .plus {
+                grid-area: plus;
+            }
+            .minus {
+                grid-area: minus;
+            }
+            .multiply {
+                grid-area: mult;
+            }
+            .divide {
+                grid-area: divide;
+            }
+            .clear {
+                grid-area: clear;
+            }
+            .equal {
+                grid-area: equal;
+            }

@@ -20,12 +20,12 @@ A JavaScript (+CSS +HTML) calculator app.
 - potentially add a floating point number input
 
 ## Project Plan
-- [x] figure out the basic button layout ![rough sketch of a layout](calclayout.jpg "Calculator Layout") + find a decent color palette (mains #dddddd and #222831, accents #30475e and #f05454)
+- [x] figure out the basic button layout ![rough sketch of a layout](calclayout.jpg "Calculator Layout") + find a decent color palette 
 - [x] create small function prototypes (see prototype folder):
     - a function that takes user string and puts out a modified string (several 0000 get ignored)
     - parse user input into a stack with pop and push methods (Reverse Polish Notation style + Shunting Yard Algorithm)
     - edge case for when user enters very long numbers
 - [x] structure the HTML
-- [ ] put all the JS prototypes together
-- [ ] mobile first CSS, fits the mobile screen, should look like a mobile calculator on desktop as well
+- [x] put all the JS prototypes together
+- [x] mobile first CSS, fits the mobile screen, should look like a mobile calculator on desktop as well
 

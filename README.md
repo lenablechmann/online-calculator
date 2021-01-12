@@ -1,5 +1,5 @@
 # Online Calculator
-A JavaScript (+CSS +HTML) calculator app.
+A JavaScript (+CSS +HTML) calculator app. You can see it live if you follow [this link](https://lenablechmann.github.io/online-calculator/ "Calc Live").
 
 ## Learning Goals/The Why of this Project
 - anchor the most used object/array methods in JavaScript

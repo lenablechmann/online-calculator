@@ -13,12 +13,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const display = document.querySelector(".user-input");
   const result = document.querySelector(".result");
 
+  // add a clear button functionality
+  document.getElementById("clear").onclick = function clearDisplay() {
+    //clearing out all of the memory (hopefully, there aint no pointers here)
+    displayedText = null, userNumber = null, numberStack = null, operatorStack = null;
+    // setting arrays, so that .length can work everywhere
+    displayedText = [];
+    userNumber = "";
+    numberStack = [];
+    operatorStack = [];
+    // resetting display as well
+    display.textContent = displayedText;
+    result.textContent = displayedText;
+  };
   // append new user input digit to displayed string if number is plausible
   digitsInput.forEach((btn) => {
     btn.addEventListener("click", function (event) {
       const newDigit = this.id;
       if (checkNumber(userNumber + newDigit)) {
         userNumber += newDigit;
+        // if((displayedText.join("") + userNumber).length > )
         display.textContent = displayedText.join("") + userNumber;
       }
     });
@@ -42,25 +56,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // add a clear button functionality
-  document.getElementById("clear").onclick = clearDisplay;
-  console.log(operatorStack);
 });
 
 // various functions
-function clearDisplay() {
-  let display = document.querySelector(".user-input");
-  let result = document.querySelector(".result");
-  displayedText = [];
-  result = "";
-  userNumber = "";
-  // completely clearing out arrays used for calculations
-  numberStack = [];
-  operatorStack = [];
-  // resetting display as well
-  display.textContent = displayedText;
-  result.textContent = result;
-}
+
 
 function checkNumber(numString) {
   // checks for duplicate . and 0 at start using regex

@@ -47,41 +47,36 @@ document.addEventListener("DOMContentLoaded", function () {
   //what happens if you press an operator button
   operatorInput.forEach((btn) => {
     btn.addEventListener("click", function (event) {
+
       // avoids operator spam
       if (userNumber.length > 0) {
         // pushing the newest numbers and operators to the beginning of the stack
+        // displaying currently added text
         operatorStack.push(this.id);
         numberStack.unshift(userNumber);
 
-        // the display goes from left to right chronologically, thats why push()
         displayedText.push(userNumber);
         displayedText.push(this.id);
         userNumber = "";
         display.textContent = displayedText.join("").slice(-maxLength);
         result.textContent = "";
-      }
-    });
-  });
-  document.getElementById("equal").onclick = () =>{
-      if (userNumber.length > 0) {
-        // pushing the newest numbers and operators to the beginning of the stack
-        numberStack.unshift(userNumber);
-      }
-    let calcResult = operateEqual(numberStack, operatorStack);
-    displayedText = [];
-    userNumber = "";
-    numberStack = [];
-    operatorStack = [];
-    display.textContent = "";
 
-    if (calcResult === Infinity || calcResult === -Infinity){
-      result.textContent = "Error";
+        if (numberStack.length > 1){
+        let calcResult = operateEqual(numberStack, operatorStack);
+        displayedText = [];
+        userNumber = "";
+        display.textContent = "";
+
+        if (calcResult === Infinity || calcResult === -Infinity){
+          result.textContent = "Error";
+        }
+        else {
+        console.log("Calc result is" + calcResult);
+          result.textContent = calcResult;
     }
-    else {
-    console.log("Calc result is" + calcResult);
-      result.textContent = calcResult;
-    }
+        }
   };
+});
 });
 
 // various functions
@@ -114,3 +109,4 @@ function operateEqual(numberStack, operatorStack){
   }
   return curResult;
 }
+});

@@ -59,13 +59,14 @@ document.addEventListener("DOMContentLoaded", function () {
         displayedText.push(this.id);
         userNumber = "";
         display.textContent = displayedText.join("").slice(-maxLength);
-        result.textContent = "";
 
         if (numberStack.length > 1){
         let calcResult = operateEqual(numberStack, operatorStack);
-        displayedText = [];
-        userNumber = "";
-        display.textContent = "";
+          if (this.id === "="){
+          displayedText = [];
+          userNumber = "";
+          display.textContent = "";
+          }
 
         if (calcResult === Infinity || calcResult === -Infinity){
           result.textContent = "Error";

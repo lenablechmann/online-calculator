@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // pushing the newest numbers and operators to the beginning of the stack
         operatorStack.push(this.id);
         numberStack.unshift(userNumber);
-        console.log(numberStack);
 
         // the display goes from left to right chronologically, thats why push()
         displayedText.push(userNumber);
@@ -69,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
         numberStack.unshift(userNumber);
       }
     let calcResult = operateEqual(numberStack, operatorStack);
-    console.log(calcResult);
     displayedText = [];
     userNumber = "";
     numberStack = [];
@@ -106,10 +104,12 @@ function operateEqual(numberStack, operatorStack){
   // using reverse polish notation with the created stacks
   while(numberStack.length >= 2) {
       let firstOperator = operatorStack.shift();
-      let num1 = parseFloat(numberStack.shift());
-      let num2 = parseFloat(numberStack.shift());
+      let num1 = parseFloat(numberStack.pop());
+      let num2 = parseFloat(numberStack.pop());
+      console.log(num1 +" and " + num2 + " with operator " +firstOperator);
       curResult = operate[firstOperator](num1,num2);
-      numberStack.unshift(curResult);
+      numberStack.push(curResult);
+      console.log(curResult);
   }
   return curResult;
 }

@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
       result.textContent = "Error";
     }
     else {
+    console.log("Calc result is" + calcResult);
       result.textContent = calcResult;
     }
   };

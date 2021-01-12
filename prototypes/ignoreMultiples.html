@@ -27,9 +27,11 @@
     <script>
         let displayedText = [];
         let userNumber = "";
+        let allUserInput = displayedText.join("") + userNumber;
         // arrays for reverse polish notation (unshift() will have to be used)
         let numberStack = [];
         let operatorStack = [];
+        const maxUserInputDisplayLength = 10;
 
         // variables for DOM modification
         const digitsInput = document.querySelectorAll(".digit");
@@ -42,7 +44,16 @@
                 const newDigit = this.id;
                 if (checkNumber(userNumber + newDigit)) {
                     userNumber += newDigit;
-                    display.textContent = displayedText.join("") + userNumber;
+
+                    console.log(allUserInput.length);
+                    // trimming off the beginning of displayed string if its too long
+                if (allUserInput.length > maxUserInputDisplayLength) {
+                
+                    display.textContent = allUserInput.slice(-maxUserInputDisplayLength);
+                }
+                else {
+                    display.textContent = allUserInput;
+                }
                 }
             });
         });
@@ -65,7 +76,6 @@
         });
         // add a clear button functionality
         document.getElementById("clear").onclick = clearDisplay;
-        console.log(operatorStack);
 
         // various functions
         function clearDisplay() {

@@ -69,10 +69,13 @@ document.addEventListener("DOMContentLoaded", function () {
             numberStack = [];
             operatorStack = [];
             display.textContent = "";
-            result.textContent = finalResult;
+          if (calcResult === Infinity || calcResult === -Infinity || isNaN(calcResult)){
+          result.textContent = "Error";}
+          else
+          result.textContent = finalResult;
           }
 
-        if (calcResult === Infinity || calcResult === -Infinity){
+        if (calcResult === Infinity || calcResult === -Infinity || isNaN(calcResult)){
           result.textContent = "Error";
         }
         else {

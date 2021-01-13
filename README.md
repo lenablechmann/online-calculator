@@ -29,3 +29,8 @@ A JavaScript (+CSS +HTML) calculator app. You can see it live if you follow [thi
 - [x] put all the JS prototypes together
 - [x] mobile first CSS, fits the mobile screen, should look like a mobile calculator on desktop as well
 
+### Possible features/improvements
+- store final result in a stack, so that user can continue the calculation with it
+- add a delete button
+- add %, power to
+

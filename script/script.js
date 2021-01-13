@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // variables for user input
   let displayedText = [];
   let userNumber = "";
+  let finalResult = "";
   let numberStack = [];
   let operatorStack = [];
   const maxLength = 35;
@@ -47,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
   //what happens if you press an operator button
   operatorInput.forEach((btn) => {
     btn.addEventListener("click", function (event) {
-
       // avoids operator spam
       if (userNumber.length > 0) {
         // pushing the newest numbers and operators to the beginning of the stack
@@ -62,10 +62,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (numberStack.length > 1){
         let calcResult = operateEqual(numberStack, operatorStack);
-          if (this.id === "="){
-          displayedText = [];
-          userNumber = "";
-          display.textContent = "";
+          if (this.id === "=") {
+            finalResult = calcResult;
+            displayedText = [];
+            userNumber = "";
+            numberStack = [];
+            operatorStack = [];
+            display.textContent = "";
+            result.textContent = finalResult;
           }
 
         if (calcResult === Infinity || calcResult === -Infinity){
